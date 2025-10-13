@@ -76,7 +76,15 @@ void  Add_before_last(int x){
     p->data=x;
     p->next=temp;
     ttemp->next=p;
-}            
+} 
+          //  TO DELETE FIRST NODE
+
+void Delete_first(){
+    temp=first;
+    first=first->next;
+    temp->next=null;
+    delete temp;
+}           
 int main(){
     init();
     createfirst(10);
@@ -95,8 +103,11 @@ int main(){
     //cout<<" add new Node before first node\n";
     //Add_before_first(90);
     //disp();
-    cout<<" add new Node before last node\n";
-    Add_before_last(90);
+    // cout<<" add new Node before last node\n";
+    // Add_before_last(90);
+    // disp();
+    cout<<" after delete first node\n";
+    Delete_first();
     disp();
 
     return 0;
