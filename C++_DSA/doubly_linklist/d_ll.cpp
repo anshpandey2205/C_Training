@@ -6,13 +6,13 @@ struct node{
     node *next,*prev;
 };
 node *first,*temp,*ttemp,*p;
-void createfirst(){
+void createfirst(int val){
     first =new node;
     cin>>first->data;
     first->next=null;
     first->prev=null;
 }
-void Addnode(){
+void Addnode(int val){
     temp=first;
     while(temp->next!=null){
     temp=temp->next;
@@ -30,6 +30,30 @@ void disp(){
         temp=temp->next;
     }
 }
+                         // ADD NEW NODE BEFORE FIRST
+
+void Add_before_first(){
+    temp=new node;
+    cin>>temp->data;
+    temp->prev=null;
+    temp->next=first;
+    first->prev=temp;
+    first=temp;
+}
+
+                         //  ADD NEW NODE BEFORE GIVEN DATA
+
+void add_before_data(int x,int y){
+    temp=first;
+    while(temp->data!=x){
+        ttemp=temp;
+        temp=temp->next;
+    }
+    p=new node;
+    p->data=y;
+    ttemp->next=p;
+    p->next=temp;
+}                         
 int main(){
     createfirst(10);
     Addnode(20);
