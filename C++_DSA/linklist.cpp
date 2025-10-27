@@ -84,7 +84,77 @@ void Delete_first(){
     first=first->next;
     temp->next=null;
     delete temp;
-}           
+}  
+           //  TO DELETE A NODE AFTER GIVEN DATA
+
+void del_after_data(int x){
+    temp=first;
+    while(temp->data!=x){
+        temp=temp->next;
+    }
+        ttemp=temp->next;
+        p=ttemp->next;
+        temp->next=p;
+        ttemp->next=null;
+        delete ttemp;
+}
+             // TO DELETE A NODE BEFORE THE GIVEN DATA
+
+void del_before_data(int x){
+    temp=first;
+    while(temp->next->data!=x){
+        ttemp=temp;
+        temp=temp->next;
+        }
+        p=temp->next;
+        ttemp->next=p;
+        temp->next=null;
+        delete temp;
+}
+               // TO DELETE LAST SECOND NODE
+void del_sec_last() {
+    temp=first;
+    while(temp->next->next!=null){
+        ttemp=temp;
+        temp=temp->next;
+    }
+    p=temp->next;
+    ttemp->next=p;
+    temp->next=null;
+    delete temp;
+} 
+                // TO DELETE Nth NODE  
+// void del_nth(int x){
+//     temp=first;
+//     while(temp->next!=x){
+//         ttemp=temp;
+//         temp=temp->next;
+//     }
+// }
+void swap(){
+    temp=first;
+    ttemp=temp->next;
+    p=ttemp->next;
+    ttemp->next=temp;
+    temp->next=p;
+    first=ttemp;
+}
+void swap_first_last(){
+    q=first;
+    while(temp->next!=null){
+        ttemp=temp;
+        temp=temp->next;
+    }
+    p=q->next;
+    ttemp->next=q;
+    q->next=null;
+    temp->next=p;
+    q=temp;
+
+}
+void swap_first_last(){
+    temp=first;
+}
 int main(){
     init();
     createfirst(10);
@@ -94,20 +164,35 @@ int main(){
     Addnode(50);
     Addnode(60);
     disp();
-    //cout<<"After add new Node\n";
-    //Add_after(30,80);
-   // disp();
-    //cout<<"Before add new Node\n";
-    //Add_before(50,70);
-    //disp();
-    //cout<<" add new Node before first node\n";
-    //Add_before_first(90);
-    //disp();
-    // cout<<" add new Node before last node\n";
-    // Add_before_last(90);
-    // disp();
-    cout<<" after delete first node\n";
-    Delete_first();
+//     cout<<"After add new Node\n";
+//     Add_after(30,80);
+//    disp();
+//     cout<<"Before add new Node\n";
+//     Add_before(50,70);
+//     disp();
+//     cout<<" add new Node before first node\n";
+//     Add_before_first(90);
+//     disp();
+//     cout<<" add new Node before last node\n";
+//     Add_before_last(90);
+//     disp();
+//     cout<<" after delete first node\n";
+//     Delete_first();
+//     disp();
+//     cout<<" after delete node is= \n";
+//     del_after_data(30);
+//     disp();
+//     cout<<" delete before given data= \n";
+//     del_before_data(50);
+//     disp();
+//     cout<<" delete second last= \n";
+//     del_sec_last();
+//     disp();
+//     cout<<" Swap = \n";
+//     swap();
+//     disp();
+    cout<<" Swap = \n";
+    swap_first_last();
     disp();
 
     return 0;
