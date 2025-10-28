@@ -6,4 +6,5 @@ int main(){
     }else{
         printf("even");
     }
+    return 0;
 }
